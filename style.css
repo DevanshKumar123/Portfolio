@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background: radial-gradient(circle at top, #021a2e, #01070d);
+  color: #b6eaff;
+  overflow-x: hidden;
+}
+
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(1, 10, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: #00e5ff;
+  text-shadow: 0 0 12px #00e5ff;
+}
+
+.logo span {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #9be9ff;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00e5ff;
+  text-shadow: 0 0 12px #00e5ff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.typing {
+  font-size: 3.2rem;
+  color: #00e5ff;
+  text-shadow: 0 0 25px #00e5ff;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.stats {
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.stats div {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.stats span {
+  display: block;
+  font-size: 2rem;
+  color: #00e5ff;
+}
+
+.section {
+  padding: 120px 90px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #00e5ff;
+  font-size: 2.4rem;
+  text-shadow: 0 0 15px #00e5ff;
+}
+
+.section p {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline {
+  max-width: 900px;
+  margin: auto;
+}
+
+.timeline-item {
+  background: rgba(0, 25, 40, 0.7);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-left: 4px solid #00e5ff;
+  transition: 0.5s;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 0 25px #00e5ff;
+}
+
+.timeline-item h3 {
+  color: #00e5ff;
+}
+
+.skill-bar {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.skill-bar span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.skill-bar div {
+  height: 12px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-bar div div {
+  height: 100%;
+  background: linear-gradient(90deg, #00e5ff, #0077ff);
+  box-shadow: 0 0 15px #00e5ff;
+  border-radius: 10px;
+  animation: loadSkill 2s ease;
+}
+
+@keyframes loadSkill {
+  from { width: 0; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+}
+
+.card3d {
+  background: linear-gradient(145deg, #011423, #022c45);
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  transform-style: preserve-3d;
+  transition: 0.4s;
+}
+
+.card3d:hover {
+  transform: rotateY(15deg) rotateX(10deg) scale(1.06);
+  box-shadow: 0 0 35px #00e5ff;
+}
+
+.project-card {
+  background: rgba(1, 30, 50, 0.8);
+  margin: 30px auto;
+  padding: 35px;
+  max-width: 900px;
+  border-left: 5px solid #00e5ff;
+  transition: 0.5s;
+}
+
+.project-card:hover {
+  transform: scale(1.03) rotateY(-5deg);
+  box-shadow: 0 0 40px #00e5ff;
+}
+
+.project-card h3 {
+  color: #00e5ff;
+  margin-bottom: 10px;
+}
+
+.project-card ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.project-card li {
+  margin-bottom: 6px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  margin-top: 10px;
+}
+
+footer {
+  background: #01070d;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(0,229,255,0.2);
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.card3d,
+.project-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 90px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .typing {
+    font-size: 2.2rem;
+  }
+
+  nav {
+    display: none;
+  }
+}
